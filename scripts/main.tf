@@ -122,6 +122,7 @@ resource "aws_apigatewayv2_route" "authed" {
 resource "aws_apigatewayv2_route" "cors" {
   api_id = var.gateway_id
   route_key = "OPTIONS /{proxy+}"
+  target = "integrations/${var.lb_integration}"
 }
 
 ###########
